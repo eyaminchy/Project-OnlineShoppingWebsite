@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags on the head section -->
+    <meta name="Eyamin Chowdhury" content="">
+    <meta name="description" content="products for page 4">
+    <meta name="keywords" content="if any">
+    <title>  Chowdhury Project part 4</title>
+    <link rel="stylesheet" href="products1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .header {
+            color: rgb(17, 17, 17);
+            background-color: rgb(223, 223, 236);
+        }
+
+        .big_text {
+            font-size: 40px;
+            text-align: left;
+            text-shadow: 3px 3px 3px rgb(163, 168, 140);
+        }
+
+        .horizontal-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .horizontal-list li {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .table1 {
+            background-image: url(img.jpg);
+        }
+
+        .top-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            background-color: rgb(223, 223, 236);
+            text-align: center;
+            font-style: italic;
+            color: black;
+        }
+        .cart{
+            position: relative;
+            background-color: white;
+            color: black;
+            padding: 5px;
+            font-size:30px;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        // Function to add items to the cart
+        function addToCart(productName, price) {
+            var cart = getCart();
+            var found = cart.find(product => product.productName === productName);
+            if (found) {
+                found.quantity += 1;
+            } else {
+                cart.push({ productName: productName, price: price, quantity: 1 });
+            }
+            setCart(cart);
+            alert(productName + ' added to cart.');
+        }
+
+        // Retrieve the cart from cookies
+        function getCart() {
+            var cookies = document.cookie.split('; ');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].split('=');
+                if (cookie[0].trim() === 'cart') {
+                    return JSON.parse(decodeURIComponent(cookie[1]));
+                }
+            }
+            return [];
+        }
+
+        // Save the cart back to the cookies
+        function setCart(cart) {
+            var date = new Date();
+            date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000)); // Expires in 30 days
+            var expires = "expires=" + date.toUTCString();
+            document.cookie = 'cart=' + encodeURIComponent(JSON.stringify(cart)) + ';' + expires + ';path=/';
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <table>
+            <td>
+                <div class="big_text">
+                    EC Clothing Hub
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="about.html">About Us</a></li></a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="contact.html">Contact Us </a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="products1.html">Men</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="products2.html">Women</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="products3.html">Kid's</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="products4.html">Wedding Special</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td>
+                <div class="horizontal-list">
+                    <a href="cart.html"><div class="cart">
+                        <i class="bi bi-cart"></i>
+                    </div>
+            </td>
+        </table>
+    </header>
+    <h1>Wedding Special Wear</h1>
+
+    <div class="products">
+
+
+        <div class="content">
+            <img src="products41.webp" alt="products41">
+            <h3>Wedding wears</h3>
+            <p>Explore our curated bride's essentials for timeless style and grooming confidence.</p>
+            <h6>$1099.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('wedding wears', 1099.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products42.webp" alt="products42">
+            <h3>Bride wears</h3>
+            <p>Explore our curated bride's essentials for timeless style and grooming confidence.</p>
+            <h6>$955.00 <span>1125.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Bride wears', 955.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products43.webp" alt="products43">
+            <h3>Traditional</h3>
+            <p>Explore our curated bride's essentials for timeless style and grooming confidence.</p>
+            <h6>$800.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Traditional', 800.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products44.webp" alt="products44">
+            <h3> Groom wears</h3>
+            <p>Explore our curated groom's essentials for timeless style and grooming confidence.</p>
+            <h6>$650 <span>$1055.00</span> </h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Groom wears', 650.00)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="products">
+
+
+        <div class="content">
+            <img src="products45.webp" alt="products45">
+            <h3>Suit Jacket</h3>
+            <p>Explore our curated groom essentials for timeless style and grooming confidence.</p>
+            <h6>$450.00 <span>$595.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Suit Jacket', 450.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products46.webp" alt="products46">
+            <h3>Classic Suit Jacket</h3>
+            <p>Explore our curated groom essentials for timeless style and grooming confidence.</p>
+            <h6>$955.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Classic Suit Jacket', 955.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products47.webp" alt="products47">
+            <h3>Sherwani</h3>
+            <p>Explore our curated groom essentials for timeless style and grooming confidence.</p>
+            <h6>$1268.00 <span>$1487.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Sherwani', 1268.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products48.webp" alt="products48">
+            <h3>Gorgeous Grown</h3>
+            <p>Explore our curated bride essentials for timeless style and grooming confidence.</p>
+            <h6>$772.00 <span>$867.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Gorgeous Grown', 772.00)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="products">
+
+
+        <div class="content">
+            <img src="products49.webp" alt="products49">
+            <h3>Indian Sherwani</h3>
+            <p>Explore our curated groom essentials for timeless style and grooming confidence.</p>
+            <h6>$665.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Indian Sherwani', 665.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products410.webp" alt="products410">
+            <h3>Nikkah Special</h3>
+            <p>Explore our curated bride essentials for timeless style and grooming confidence.</p>
+            <h6>$685.00 <span>$800.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Nikkah Special', 685.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products411.webp" alt="products411">
+            <h3> Attractive wear</h3>
+            <p>Explore our curated bride essentials for timeless style and grooming confidence.</p>
+            <h6>$960.00 <span>$1337.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Attractive wear', 1337.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products412.webp" alt="products412">
+            <h3>Classy-Wears</h3>
+            <p>Explore our curated groom essentials for timeless style and grooming confidence.</p>
+            <h6>$1450.00 <span>$1600.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Classy-Wears ', 1450.00)">Add to Cart</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; Last updated on May 10th 2024 by EC Clothing Hub. copyrights.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags on the head section -->
+    <meta name="Eyamin Chowdhury" content="">
+    <meta name="description" content="products for page 3">
+    <meta name="keywords" content="if any">
+    <title>  Chowdhury Project part 4</title>
+    <link rel="stylesheet" href="products1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .header {
+            color: rgb(17, 17, 17);
+            background-color: rgb(223, 223, 236);
+        }
+
+        .big_text {
+            font-size: 40px;
+            text-align: left;
+            text-shadow: 3px 3px 3px rgb(163, 168, 140);
+        }
+
+        .horizontal-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .horizontal-list li {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .table1 {
+            background-image: url(img.jpg);
+        }
+
+        .top-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            background-color: rgb(223, 223, 236);
+            text-align: center;
+            font-style: italic;
+            color: black;
+        }
+        .cart{
+            position: relative;
+            background-color: white;
+            color: black;
+            padding: 5px;
+            font-size:30px;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        // Function to add items to the cart
+        function addToCart(productName, price) {
+            var cart = getCart();
+            var found = cart.find(product => product.productName === productName);
+            if (found) {
+                found.quantity += 1;
+            } else {
+                cart.push({ productName: productName, price: price, quantity: 1 });
+            }
+            setCart(cart);
+            alert(productName + ' added to cart.');
+        }
+
+        // Retrieve the cart from cookies
+        function getCart() {
+            var cookies = document.cookie.split('; ');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].split('=');
+                if (cookie[0].trim() === 'cart') {
+                    return JSON.parse(decodeURIComponent(cookie[1]));
+                }
+            }
+            return [];
+        }
+
+        // Save the cart back to the cookies
+        function setCart(cart) {
+            var date = new Date();
+            date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000)); // Expires in 30 days
+            var expires = "expires=" + date.toUTCString();
+            document.cookie = 'cart=' + encodeURIComponent(JSON.stringify(cart)) + ';' + expires + ';path=/';
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <table>
+            <td>
+                <div class="big_text">
+                    EC Clothing Hub
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="about.html">About Us</a></li></a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="contact.html">Contact Us </a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="products1.html">Men</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="products2.html">Women</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="products3.html">Kid's</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="horizontal-list">
+                    <ul>
+                        <li><a href="products4.html">Wedding Special</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td></td><td></td><td></td><td></td><td></td>
+            <td>
+                <div class="horizontal-list">
+                    <a href="cart.html"><div class="cart">
+                        <i class="bi bi-cart"></i>
+                    </div>
+            </td>
+        </table>
+    </header>
+    <h1>Kid's Wear</h1>
+
+    <div class="products">
+
+
+        <div class="content">
+            <img src="products31.webp" alt="products31">
+            <h3>t-shirt</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$30.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('t-shirt', 30.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products32.webp" alt="products32">
+            <h3>Stylist_Shirts</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$95.00 <span>125.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Stylist_Shirts', 95.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products33.webp" alt="products33">
+            <h3>Cozzy Wears</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$80.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Cozzy Wears', 80.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products34.webp" alt="products34">
+            <h3>Pink wears</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$65 <span>$95.00</span> </h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Pink wears', 95.00)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="products">
+
+
+        <div class="content">
+            <img src="products35.webp" alt="products35">
+            <h3>T`-shirts</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$50.00 <span>$95.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('T`-Shirts', 50.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products36.webp" alt="products36">
+            <h3>T-shirts-B</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$95.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('T-shirts-B', 95.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products37.webp" alt="products37">
+            <h3>Hoodie</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$115.00 <span>$125.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Hoodie', 115.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products38.webp" alt="products38">
+            <h3>Kid`s wear</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$72.00 <span>$87.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Kid`s wear', 72.00)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="products">
+
+
+        <div class="content">
+            <img src="products39.webp" alt="products39">
+            <h3>kid`s wear</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$65.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('kid`s wear', 65.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products310.webp" alt="products310">
+            <h3>T-shirts</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$48.00</h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('T-shirts', 48.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products311.webp" alt="products311">
+            <h3>Pair T-shirts</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$96.00 <span>$135.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Pair T-shirts', 96.00)">Add to Cart</button>
+        </div>
+        <div class="content">
+            <img src="products312.webp" alt="products312">
+            <h3>Beach wears</h3>
+            <p>Explore our curated Kid's essentials for timeless style and grooming confidence.</p>
+            <h6>$27.50 <span>$35.00</span></h6>
+            <ul>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+                <li><i class="fa fa-star checked">&#9733;</i></li>
+            </ul>
+            <button class="addcart" onclick="addToCart('Beach wears', 27.00)">Add to Cart</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; Last updated on May 10th 2024 by EC Clothing Hub. copyrights.</p>
+    </footer>
+</body>
+
+</html>
